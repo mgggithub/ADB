@@ -1,0 +1,14 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prop: <http://gipuzkoa.eus/prop/>
+
+INSERT {
+  ?municipio owl:sameAs ?dbpediaMunicipio .
+}
+WHERE {
+  ?museo prop:kokalekua ?municipio .
+  FILTER (?museo = <http://gipuzkoa.eus/resource/gugenheim>)
+  SERVICE <http://dbpedia.org/sparql> {
+    ?dbpediaMunicipio a <http://dbpedia.org/ontology/City> ;
+                      <http://dbpedia.org/ontology/mayor> ?alcalde .
+  }
+}

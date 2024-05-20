@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://vocab.abd.ehu.eus/museoak" uri="test.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://gipuzkoa.eus/prop/" uri="Museoak-rdf-owl.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://gipuzkoa.eus/prop/" uri="Museoak-rdf-owl.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://gipuzkoa.eus/prop/" uri="Museoak-rdf-owl.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1714313741161" name="http://gipuzkoa.eus/prop/" uri="Museoak-rdf-owl.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1714313741161" name="duplicate:http://www.semanticweb.org/mikel/ontologies/2024/3/untitled-ontology-2/" uri="entrega1.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1714313741161" name="duplicate:http://www.semanticweb.org/mikel/ontologies/2024/3/untitled-ontology-2/" uri="test.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1714313741161" name="http://www.semanticweb.org/mikel/ontologies/2024/3/untitled-ontology-3/" uri="ontologia.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1714313741161" name="urn:absolute:4/" uri="onto.rdf"/>
+    </group>
+</catalog>

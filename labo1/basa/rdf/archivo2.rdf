@@ -1,0 +1,5 @@
+PREFIX gip:<http://gipuzkoa.eus/resource/>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX dbpedia:<http://dbpedia.org/resource/>
+
+gip:Bilbo owl:sameAs dbpedia:Bilbao .

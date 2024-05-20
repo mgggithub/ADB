@@ -1,0 +1,63 @@
+PREFIX museo: <http://example.org/museo/>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+museo:JM_Barandiaran rdf:type museo:Museoa ;
+                     museo:kokalekua "Ataun" ;
+                     museo:langilea "Mikel Aranguren" ;
+                     museo:langile_bizilekua "Bilbo" ;
+                     museo:arloa "Jose Miguel Barandiaran" ;
+                     museo:irekitze_data "2015-07-07" ;
+                     museo:item_kop "457" .
+
+museo:JM_Barandiaran rdf:type museo:Museoa ;
+                     museo:langilea "Leire Bardaji" ;
+                     museo:langile_bizilekua "Ataun" .
+
+museo:JM_Barandiaran rdf:type museo:Museoa ;
+                     museo:langilea "Jon Alfaro" ;
+                     museo:langile_bizilekua "Donostia" .
+
+museo:San_Telmo rdf:type museo:Museoa ;
+                museo:kokalekua "Donostia" ;
+                museo:langilea "Mikel Aranguren" ;
+                museo:langile_bizilekua "Bilbo" ;
+                museo:arloa "Kultura" ;
+                museo:irekitze_data "2011-10-24" ;
+                museo:item_kop "1256" .
+
+museo:San_Telmo rdf:type museo:Museoa ;
+                     museo:langilea "Aitor Labajo" ;
+                     museo:langile_bizilekua "Eibar" .
+
+museo:Gugenheim rdf:type museo:Museoa ;
+                museo:kokalekua "Bilbo" ;
+                museo:langilea "Mikel Aranguren" ;
+                museo:langile_bizilekua "Bilbo" ;
+                museo:arloa "Artea" ;
+                museo:irekitze_data "1991-11-25" ;
+                museo:item_kop "36" .
+
+museo:Gugenheim rdf:type museo:Museoa ;
+                     museo:langilea "Aitor Labajo" .
+
+museo:Gugenheim rdf:type museo:Museoa ;
+                     museo:langilea "Miren Aranguren" ;
+                     museo:langile_bizilekua "Bilbo" .
+
+museo:Gugenheim rdf:type museo:Museoa ;
+                     museo:langilea "Eneko Aranguren" ;
+                     museo:langile_bizilekua "Bilbo" .
+
+museo:Gugenheim rdf:type museo:Museoa ;
+                     museo:langilea "Michael Bush" ;
+                     museo:langile_bizilekua "Boston" .
+
+museo:Gugenheim rdf:type museo:Museoa ;
+                     museo:langilea "Soledad Barroso" ;
+                     museo:langile_bizilekua "Paris" .
+
+
+
+
+museo:Bilbo owl:sameAs dbpedia:Bilbao .

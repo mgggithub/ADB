@@ -1,0 +1,208 @@
+#Oscar Basaguren
+#Mikel Goti
+
+CREAR DATOS Y CONSULTAS:
+-------------------------
+
+test> use cine
+switched to db cine
+cine> db.actores.insertMany([{nombre: "Joaquin Phoenix", edad: 12 },{nombre: "Renee Zelweger", edad: 53}, {nombre: "Keanu Reeves", edad: 58},])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('663346da7bba8602532202d8'),
+    '1': ObjectId('663346da7bba8602532202d9'),
+    '2': ObjectId('663346da7bba8602532202da')
+  }
+}
+cine> db.peliculas.insertMany([{nombre: "Her", año: 2013}, {nombre:" Joker", año: 2019},{nombre: "Judy", año: 2019}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('663347ec7bba8602532202db'),
+    '1': ObjectId('663347ec7bba8602532202dc'),
+    '2': ObjectId('663347ec7bba8602532202dd')
+  }
+}
+cine> db.actores.updateOne(
+     { nombre: "Joaquín Phoenix" },
+     { $set: { edad: 48 } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+cine> db.actores.deleteOne({ nombre: "Keanu Reeves" })
+{ acknowledged: true, deletedCount: 1 }
+cine> db.peliculas.insertOne({ nombre: "Avatar", año: 2009, nota: 7.2 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('6633483f7bba8602532202de')
+}
+cine> db.peliculas.find({ año: { $gte: 2015 } }, { _id: 0, nombre: 1 })
+##############################################################################################################
+
+CREAR RELACIONES
+-----------------
+Añadir Campo Premios:
+----------------------
+cine> db.actores.updateMany(
+    { nombre: "Renée Zellweger" },
+    {
+      $set: {
+          premios: [
+             { nombre: "Oscar a la mejor actriz", año: 2020 },
+             { nombre: "Globo de Oro a la mejor actriz", año: 2020 }
+          ]
+       }
+    }
+ )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+cine> db.actores.updateOne(
+    { nombre: "Joaquin Phoenix" },
+    {
+      $set: {
+         premios: [
+             { nombre: "Oscar al mejor Actor", año: 2020 }
+          ]
+       }
+    }
+ )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+Campo Participa:
+-----------------
+
+cine> var herId = db.peliculas.findOne({ nombre: "Her" })._id;
+
+cine> var jokerId = db.peliculas.findOne({ nombre: "Joker" })._id;
+
+cine> var judyId = db.peliculas.findOne({ nombre: "Judy" })._id;
+
+
+cine> db.actores.updateMany(
+    { nombre: "Joaquin Phoenix" },
+    { $addToSet: { participa: herId, jokerId } }
+  )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+cine> 
+
+cine> db.actores.updateMany(
+     { nombre: "Renée Zellweger" },
+    { $addToSet: { participa: judyId } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+Mostrar:
+---------
+var joaquinData = db.actores.aggregate([
+    { $match: { nombre: "Joaquin Phoenix" } }, 
+    { $unwind: "$participa" }, /
+    {
+        $lookup: {
+            from: "peliculas", 
+            localField: "participa",
+            foreignField: "_id",
+            as: "peliculas"
+        }
+    }
+]);
+
+printjson(joaquinData.toArray());
+
+
+var reneeData = db.actores.aggregate([
+    { $match: { nombre: "Renée Zellweger" } },
+    { $unwind: "$participa" }, 
+    {
+        $lookup: {
+            from: "peliculas", 
+            localField: "participa",
+            foreignField: "_id",
+            as: "peliculas"
+        }
+    }
+]);
+
+
+
+printjson(reneeData.toArray());
+#################################################################################################################
+Esquemas:
+----------
+cine> var schema = {
+    validator: {
+       $jsonSchema: {
+          bsonType: "object",
+          required: ["nombre", "poblacion", "capacidad"],
+          properties: {
+             nombre: {
+                bsonType: "string"
+             },
+             poblacion: {
+                bsonType: "string"
+             },
+             capacidad: {
+                bsonType: "int",
+                minimum: 150
+             }
+          }
+       }
+    },
+    validationLevel: "strict", 
+    validationAction: "warn" 
+ };
+
+
+cine> db.createCollection("salas", schema);
+{ ok: 1 }
+
+
+Introducir documentos:
+------------------------------------
+cine> db.salas.insertMany([
+    { nombre: "Yelmo Megapark", poblacion: "Barakaldo", capacidad: 500 },
+    { nombre: "Autocine", poblacion: "Getxo", capacidad: 100 },
+    { nombre: "Zubiarte", poblacion: "Bilbao", capacidad: 250 }
+ ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('663353c17bba8602532202e9'),
+    '1': ObjectId('663353c17bba8602532202ea'),
+    '2': ObjectId('663353c17bba8602532202eb')
+  }
+}
+
+
+
+
+
+

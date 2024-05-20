@@ -1,0 +1,13 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX drm: <http://vocab.data.gov/def/drm#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gipuzkoa: <http://gipuzkoa.eus/resource/>
+PREFIX prop: <http://gipuzkoa.eus/prop/>
+
+SELECT DISTINCT ?museo WHERE {
+  ?persona foaf:name ?nombre .
+  FILTER(regex(?nombre, "^Mi")) .
+  ?persona drm:worksFor ?museo .
+  ?museo prop:kopurua ?trabajadores .
+  FILTER(xsd:integer(?trabajadores) > 800) .
+}

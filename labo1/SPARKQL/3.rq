@@ -1,0 +1,9 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX drm: <http://vocab.data.gov/def/drm#>
+PREFIX p: <http://gipuzkoa.eus/resource/>
+PREFIX prop: <http://gipuzkoa.eus/prop/>
+
+SELECT ?localizacion WHERE {
+  p:aitor-labajo drm:worksFor ?museo .
+  ?museo prop:kokalekua ?localizacion .
+}

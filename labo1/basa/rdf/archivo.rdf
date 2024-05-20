@@ -1,0 +1,81 @@
+PREFIX gip:<http://gipuzkoa.eus/resource/>
+PREFIX gip_prop:<http://gipuzkoa.eus/prop/>
+PREFIX dbpedia:<http://dbpedia.org/resource/>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+gip:JM_Barandiaran rdf:type gip:Person .
+gip:JM_Barandiaran gip_prop:hasLocation gip:Ataun .
+gip:JM_Barandiaran gip_prop:employeeOf gip:San_Telmo .
+gip:JM_Barandiaran gip_prop:residenceLocation gip:Bilbo .
+gip:JM_Barandiaran gip_prop:name "Jose Miguel Barandiaran" .
+gip:JM_Barandiaran gip_prop:openDate "07/07/2015" .
+gip:JM_Barandiaran gip_prop:itemCount "457" .
+
+gip:San_Telmo rdf:type gip:Place .
+gip:San_Telmo gip_prop:hasLocation gip:Donostia .
+gip:San_Telmo gip_prop:employeeOf gip:Gugenheim .
+gip:San_Telmo gip_prop:residenceLocation gip:Bilbo .
+gip:San_Telmo gip_prop:name "San Telmo" .
+gip:San_Telmo gip_prop:openDate "24/10/2011" .
+gip:San_Telmo gip_prop:itemCount "1256" .
+
+gip:Gugenheim rdf:type gip:Place .
+gip:Gugenheim gip_prop:hasLocation gip:Bilbo .
+gip:Gugenheim gip_prop:employeeOf gip:San_Telmo .
+gip:Gugenheim gip_prop:residenceLocation gip:Bilbo .
+gip:Gugenheim gip_prop:name "Gugenheim" .
+gip:Gugenheim gip_prop:openDate "25/11/1991" .
+gip:Gugenheim gip_prop:itemCount "36" .
+
+gip:Ataun rdf:type gip:Place .
+gip:Bilbo rdf:type gip:Place .
+gip:Donostia rdf:type gip:Place .
+
+gip:Mikel_Aranguren rdf:type gip:Person .
+gip:Mikel_Aranguren gip_prop:residenceLocation gip:Bilbo .
+gip:Mikel_Aranguren gip_prop:name "Mikel Aranguren" .
+
+gip:Aitor_Labajo rdf:type gip:Person .
+gip:Aitor_Labajo gip_prop:residenceLocation gip:Eibar .
+gip:Aitor_Labajo gip_prop:name "Aitor Labajo" .
+
+gip:Leire_Bardaji rdf:type gip:Person .
+gip:Leire_Bardaji gip_prop:residenceLocation gip:Ataun .
+gip:Leire_Bardaji gip_prop:name "Leire Bardaji" .
+
+gip:Jon_Alfaro rdf:type gip:Person .
+gip:Jon_Alfaro gip_prop:residenceLocation gip:Donostia .
+gip:Jon_Alfaro gip_prop:name "Jon Alfaro" .
+
+gip:Miren_Aranguren rdf:type gip:Person .
+gip:Miren_Aranguren gip_prop:residenceLocation gip:Bilbo .
+gip:Miren_Aranguren gip_prop:name "Miren Aranguren" .
+
+gip:Eneko_Aranguren rdf:type gip:Person .
+gip:Eneko_Aranguren gip_prop:residenceLocation gip:Bilbo .
+gip:Eneko_Aranguren gip_prop:name "Eneko Aranguren" .
+
+gip:Michael_Bush rdf:type gip:Person .
+gip:Michael_Bush gip_prop:residenceLocation dbpedia:Boston .
+gip:Michael_Bush gip_prop:name "Michael Bush" .
+
+gip:Soledad_Barroso rdf:type gip:Person .
+gip:Soledad_Barroso gip_prop:residenceLocation dbpedia:Paris .
+gip:Soledad_Barroso gip_prop:name "Soledad Barroso" .
+
+gip:Juan_Goytisolo rdf:type gip:Person .
+gip:Juan_Goytisolo gip_prop:name "Juan Goytisolo" .
+
+gip:Maialen_Albizuri rdf:type gip:Person .
+gip:Maialen_Albizuri gip_prop:residenceLocation gip:Durango .
+gip:Maialen_Albizuri gip_prop:name "Maialen Albizuri" .
+
+gip:Iratxe_Gandiaga rdf:type gip:Person .
+gip:Iratxe_Gandiaga gip_prop:residenceLocation gip:Eibar .
+gip:Iratxe_Gandiaga gip_prop:name "Iratxe Gandiaga" .
+
+gip:Mark_Wilkinson rdf:type gip:Person .
+gip:Mark_Wilkinson gip_prop:residenceLocation gip:Otawa .
+gip:Mark_Wilkinson gip_prop:name "Mark Wilkinson" .
+

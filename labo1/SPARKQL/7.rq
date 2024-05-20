@@ -1,0 +1,6 @@
+SELECT DISTINCT ?dataset
+WHERE {
+  GRAPH ?dataset {
+    ?s ?p ?o .
+  }
+}

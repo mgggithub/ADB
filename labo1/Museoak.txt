@@ -1,0 +1,16 @@
+Museoa	Kokalekua	Langilea	Langile bizilekua	Arloa	Irekitze data	Item kop
+JM Barandiaran	Ataun	Mikel Aranguren	Bilbo	Jose Miguel Barandiaran	07/07/2015	457
+JM Barandiaran		Leire Bardaji	Ataun			
+JM Barandiaran		Jon Alfaro	Donostia			
+San Telmo	Donostia	Mikel Aranguren	Bilbo	Kultura	24/10/2011	1256
+San Telmo		Aitor Labajo	Eibar			
+Gugenheim	Bilbo	Mikel Aranguren	Bilbo	Artea	25/11/1991	36
+Gugenheim		Aitor Labajo				
+Gugenheim		Miren Aranguren	Bilbo			
+Gugenheim		Eneko Aranguren	Bilbo			
+Gugenheim		Michael Bush	Boston			
+Gugenheim		Soledad Barroso	Paris	
+Gugenheim		Juan Goytisolo				
+Gugenheim		Maialen Albizuri	Durango			
+Gugenheim		Iratxe Gandiaga	Eibar			
+Gugenheim		Mark Wilkinson	Otawa			
